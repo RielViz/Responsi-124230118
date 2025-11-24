@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:responsi_124230118/screen/detail_page.dart';
+import 'package:responsi_124230118/screen/meals_page.dart';
 import '../model/category_model.dart';
 import '../service/meals_service.dart';
 
@@ -47,6 +49,16 @@ class _HomePageState extends State<HomePage> {
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(categories.strCategoryDescription),
+                  onTap: () async {
+                    // Navigasi ke detail, dan refresh favorite saat kembali
+                    // (Siapa tahu user menghapus favorite dari dalam halaman detail)
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MealsPage(username: widget.username),
+                      ),
+                    );
+                  },
                 ),
               );
             },
