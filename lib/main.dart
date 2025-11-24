@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:responsi_124230118/screen/home_page.dart';
 
-void main() {
-  runApp(const MainApp());
-}
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'meals',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        useMaterial3: true,
       ),
+      home: HomePage(username: 'username',)
     );
   }
 }
